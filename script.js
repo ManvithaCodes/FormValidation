@@ -14,8 +14,9 @@ const confirmPasswordError = document.getElementById("confirmPasswordError");
 
 // Load username from localStorage
 window.addEventListener("DOMContentLoaded", () => {
-    // Check if a username is saved in localStorage and pre-fill the username field
+    // Checking if a username is saved in localStorage and pre-fill the username field if it exists
   const savedUsername = localStorage.getItem("username");
+  // If a saved username is found, setting it as the value of the username input field
   if (savedUsername) {
     username.value = savedUsername;
   }

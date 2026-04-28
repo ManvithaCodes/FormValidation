@@ -1,3 +1,8 @@
+running the project 
+
+Open the index.html file in the browser by double-clicking  The form will run directly in the browser.
+
+
 How did event.preventDefault() help in handling form submission?
 event.preventDefault() stops the form from submitting and refreshing the page. This lets me check the inputs using JavaScript first. So, the form only submits when everything is correct.
 
