@@ -14,6 +14,7 @@ const confirmPasswordError = document.getElementById("confirmPasswordError");
 
 // Load username from localStorage
 window.addEventListener("DOMContentLoaded", () => {
+    // Check if a username is saved in localStorage and pre-fill the username field
   const savedUsername = localStorage.getItem("username");
   if (savedUsername) {
     username.value = savedUsername;
@@ -23,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Generic field validation  
 function validateField(input, errorElement) {
+    // Check for various validity states and set appropriate error messages
   if (input.validity.valueMissing) {
     errorElement.textContent = "This field is required";
   } 
@@ -33,6 +35,7 @@ function validateField(input, errorElement) {
     errorElement.textContent = "Enter a valid format";
   } 
   else if (input.validity.patternMismatch) {
+    // This case is specific to the password field's pattern requirement
     errorElement.textContent =
       "Password must include uppercase, lowercase, and number";
   } 
@@ -44,6 +47,7 @@ function validateField(input, errorElement) {
 
 // Confirm password validation
 function validateConfirmPassword() {
+    // Check if confirm password matches the password field
   if (confirmPassword.value !== password.value) {
     confirmPasswordError.textContent = "Passwords do not match";
     return false;
@@ -67,7 +71,7 @@ password.addEventListener("input", () => {
   validateField(password, passwordError);
   validateConfirmPassword();
 });
-
+// Confirm password validation checks if it matches the password field
 confirmPassword.addEventListener("input", validateConfirmPassword);
 
 
@@ -80,7 +84,7 @@ form.addEventListener("submit", function (event) {
   validateField(email, emailError);
   validateField(password, passwordError);
   const isConfirmValid = validateConfirmPassword();
-
+// Check overall form validity
   if (
     username.checkValidity() &&
     email.checkValidity() &&
