@@ -1,0 +1,41 @@
+Testing and Validation
+
+Test Basic Registration: Fill out all fields with valid data and submit the form. Verify the success message and that the username is saved in localStorage (check your browser’s Developer Tools > Application > Local Storage).
+the form will be submited successfully
+
+Test Username Validation:
+displays the username feild is required and must be 4 chars long
+
+Try submitting with an empty username
+error is dispalyed- "the feild is required"
+
+Enter a username that is too short.
+displays minimum length is 4
+
+Verify error messages appear in real-time as you type (or on blur/submit).
+Test Email Validation:
+Try submitting with an empty email.
+//displays the feild is required
+
+
+Enter an invalid email format (e.g., “test@”, “test.com”).
+displays enter a valid format
+
+Test Password Validation:
+Try submitting with an empty password.
+displays the feild is required
+
+Enter a password that is too short.
+displays minimum length is 8 
+
+
+Enter a password that doesn’t meet the pattern (e.g., all lowercase, no numbers).
+displays password must include uppercase,lowercase and numbers
+
+
+Ensure the “Confirm Password” field shows an error if it doesn’t match the password.
+it does display passwords do not match
+
+
+Test Local Storage Persistence: After a successful registration, refresh the page. The username field should be pre-filled with the value you entered.
+it is successful test and passed 
